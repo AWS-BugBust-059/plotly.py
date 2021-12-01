@@ -1466,7 +1466,7 @@ def request_image_with_retrying(**kwargs):
     if config.server_url:
         server_url = config.server_url
     else:
-        server_url = "http://{hostname}:{port}".format(
+        server_url = "https://{hostname}:{port}".format(
             hostname="localhost", port=orca_state["port"]
         )
 
