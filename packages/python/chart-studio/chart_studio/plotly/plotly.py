@@ -1405,7 +1405,7 @@ def add_share_key_to_url(plot_url, attempt=0):
     # https://github.com/plotly/streambed/issues/4089
     time.sleep(4)
     share_key_enabled = v2.files.retrieve(fid).json()["share_key_enabled"]
-    if not share_key_enabled:
+    if not share_key_enabled and attempt:
         attempt += 1
         if attempt == 50:
             raise _plotly_utils.exceptions.PlotlyError(
